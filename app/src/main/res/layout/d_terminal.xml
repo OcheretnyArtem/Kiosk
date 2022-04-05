@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="400dp"
+        android:layout_marginStart="@dimen/terminalDialogHorizontalMargin"
+        android:layout_marginTop="@dimen/terminalDialogVerticalMargin"
+        android:layout_marginEnd="@dimen/terminalDialogHorizontalMargin"
+        android:layout_marginBottom="@dimen/terminalDialogVerticalMargin">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_grey">
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/titleScreenMargin"
+                android:layout_marginTop="@dimen/titleScreenMargin"
+                android:text="@string/cancel"
+                android:textColor="@color/blue"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/titleScreenMargin"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="@dimen/titleScreenMargin"
+                android:text="@string/discovery"
+                android:textColor="@color/black"
+                android:textSize="@dimen/mainTitleSize"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_cancel" />
+
+            <TextView
+                android:id="@+id/tv_select_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/titleScreenMargin"
+                android:layout_marginTop="@dimen/titleScreenMargin"
+                android:text="@string/selectLocation"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/smallTitleSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+            <TextView
+                android:id="@+id/tvlocation"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/ripple_white_background"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/titleScreenMargin"
+                android:paddingEnd="@dimen/titleScreenMargin"
+                android:text="@string/mockLocation"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/chooserSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_select_location" />
+
+            <TextView
+                android:id="@+id/tv_location_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/titleScreenMargin"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/titleScreenMargin"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/smallTitleSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvlocation" />
+
+            <TextView
+                android:id="@+id/tv_update_plan_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/titleScreenMargin"
+                android:layout_marginTop="22dp"
+                android:text="@string/updatePlan"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/smallTitleSize"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_location_description" />
+
+            <TextView
+                android:id="@+id/tv_update_plan"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/ripple_white_background"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/titleScreenMargin"
+                android:paddingEnd="@dimen/titleScreenMargin"
+                android:text="@string/updatePlanRandom"
+                android:textColor="@color/black"
+                android:textSize="@dimen/chooserSize"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_update_plan_title" />
+
+            <TextView
+                android:id="@+id/tv_readers_list_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/titleScreenMargin"
+                android:layout_marginTop="22dp"
+                android:text="@string/nearbyReaders"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/smallTitleSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_update_plan" />
+
+            <ProgressBar
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_readers_list_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_readers_list_title" />
+
+            <TextView
+                android:id="@+id/tv_readers_list_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/smallTitleSize"
+                android:text="@string/readersListDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="@dimen/titleScreenMargin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_readers_list_title" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_terminals"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_readers_list_description" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

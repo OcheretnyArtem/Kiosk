@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'kotlin-parcelize'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+android {
+
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "app.onem.kiosk"
+        minSdk 28
+        targetSdk 31
+        versionCode rootProject.versionMajor * 10000 + rootProject.versionMinor * 100 + rootProject.versionPatch
+        versionName "${rootProject.versionMajor}.${rootProject.versionMinor}.${rootProject.versionPatch}"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+
+        def WEB_APP = "WEB_APP"
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", WEB_APP, "\"kioskapp-1.37\""
+        }
+
+        release {
+            minifyEnabled true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", WEB_APP, "\"kioskapp-1.42\""
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/io.netty.versions.properties'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
+
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+
+    //Kotlin, Coroutines
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+
+    //Koin
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
+    implementation "io.insert-koin:koin-android-viewmodel:$koin_version"
+
+    //Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    //Material
+    implementation "com.google.android.material:material:$material_version"
+
+    //ViewBinding delegate
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate:1.4.6'
+
+    //Timber
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    //AdapterDelegates
+    implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapter_delegates_version"
+    implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapter_delegates_version"
+
+    //FlowBinding
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-appcompat:$flowbinding_version"
+
+    //nanohttpd web server
+    implementation "org.nanohttpd:nanohttpd:$nanohttpd_version"
+    implementation "org.nanohttpd:nanohttpd-webserver:$nanohttpd_version"
+
+    //Ktor
+    implementation "io.ktor:ktor-server-netty:$ktor_version"
+    implementation "io.ktor:ktor-gson:$ktor_version"
+    implementation "io.ktor:ktor-html-builder:$ktor_version"
+    implementation "io.ktor:ktor-websockets:$ktor_version"
+    implementation "ch.qos.logback:logback-classic:$ktor_logback_version"
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Values for tablet landscape and portrait  -->
+    <dimen name="terminalDialogHorizontalMargin">70dp</dimen>
+    <dimen name="terminalDialogVerticalMargin">70dp</dimen>
+</resources>

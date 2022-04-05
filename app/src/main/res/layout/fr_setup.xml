@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_grey">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/titleScreenMargin"
+        android:text="@string/mainScreenTitle"
+        android:textColor="@color/black"
+        android:textSize="@dimen/mainTitleSize"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="@dimen/titleScreenLogoSize"
+        android:layout_height="@dimen/titleScreenLogoSize"
+        android:contentDescription="@null"
+        android:src="@drawable/new_logo"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_reader_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/primary_margin"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textPaymentPrimary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+
+    <TextView
+        android:id="@+id/tvReaderInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:minHeight="100dp"
+        android:paddingStart="@dimen/titleScreenMargin"
+        android:paddingEnd="@dimen/titleScreenMargin"
+        android:textColor="@color/black"
+        android:textSize="@dimen/chooserSize"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:text="Reader Info" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/select_store_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline">
+
+
+        <TextView
+            android:id="@+id/tv_shop_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/titleScreenMargin"
+            android:text="@string/mainScreenShopTitle"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/smallTitleSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_shop_selected"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/ripple_white_background"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/titleScreenMargin"
+            android:paddingEnd="@dimen/titleScreenMargin"
+            android:text="@string/mainScreenShopPlaceholder"
+            android:textColor="@color/black"
+            android:textSize="@dimen/chooserSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_shop_title"
+            tools:text="KAZKA" />
+
+        <TextView
+            android:id="@+id/tv_reader_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/titleScreenMargin"
+            android:layout_marginTop="@dimen/titleScreenMargin"
+            android:text="@string/mainScreenCardReaderTitle"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/smallTitleSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_shop_selected" />
+
+        <TextView
+            android:id="@+id/tv_discover"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/ripple_white_background"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/titleScreenMargin"
+            android:paddingEnd="@dimen/titleScreenMargin"
+            android:text="@string/mainScreenDiscover"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/chooserSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_reader_title" />
+
+        <TextView
+            android:id="@+id/tv_bluetooth"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ripple_white_background"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/titleScreenMargin"
+            android:paddingEnd="@dimen/titleScreenMargin"
+            android:text="@string/mainScreenBluetooth"
+            android:textColor="@color/black"
+            android:textSize="@dimen/chooserSize"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_discover" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/reader_connected_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline">
+
+        <TextView
+            android:id="@+id/tv_card_reader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/titleScreenMargin"
+            android:text="@string/mainScreenCardReaderTitle"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/smallTitleSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_go_to_shop"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/ripple_white_background"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/titleScreenMargin"
+            android:paddingEnd="@dimen/titleScreenMargin"
+            android:text="@string/goToShop"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/chooserSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_card_reader" />
+
+        <FrameLayout
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/background_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_go_to_shop" />
+
+        <TextView
+            android:id="@+id/tv_disconnect"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ripple_white_background"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/titleScreenMargin"
+            android:paddingEnd="@dimen/titleScreenMargin"
+            android:text="@string/mainScreenDisconnect"
+            android:textColor="@color/red"
+            android:textSize="@dimen/chooserSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progressIndicator"
+        android:layout_width="@dimen/progressIndicatorSize"
+        android:layout_height="@dimen/progressIndicatorSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

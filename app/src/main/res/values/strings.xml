@@ -1,0 +1,104 @@
+<resources>
+    <string name="appName">1m Kiosk</string>
+    <string name="mainScreenTitle">1M Kiosk</string>
+    <string name="mainScreenShopTitle">Select your store</string>
+    <string name="mainScreenShopPlaceholder">Select a store</string>
+    <string name="mainScreenCardReaderTitle">Card reader</string>
+    <string name="mainScreenDiscover">Discover readers</string>
+    <string name="mainScreenBluetooth">Bluetooth Scan</string>
+    <string name="mainScreenDisconnect">Disconnect</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="discovery">Discovery</string>
+    <string name="selectLocation">SELECT LOCATION</string>
+    <string name="mockLocation">Mock simulated reader location</string>
+    <string name="tvMockLocationDescription">Simulated readers are always registered to the mock simulated location.</string>
+    <string name="tvRealLocationDescription">Bluetooth readers must be registered to a location during the connection process. If you do not select a location, the reader will attempt to register to the same location it was registered to during the previous connection.</string>
+    <string name="updatePlan">SIMULATED UPDATE PLAN</string>
+    <string name="updatePlanRandom">Random</string>
+    <string name="nearbyReaders">NEARBY READERS</string>
+    <string name="inputPhoneNumberMessage">Please input your phone number to receive order updates and claim your rewards</string>
+    <string name="yourPhoneNumber">Your Phone Number</string>
+    <string name="preferredNameRequired">Preferred Name (Required) *</string>
+    <string name="preferredName">Preferred Name</string>
+    <string name="continueToPayment">Continue To Payment</string>
+    <string name="phoneError">Please check your phone number</string>
+    <string name="nameError">Please add your preferred name</string>
+    <string name="locationAlert">Location service is not available, please check in settings.</string>
+    <string name="locationPermissionAlert">Location permission is not granted, please check in settings.</string>
+    <string name="bluetoothPermissionAlert">Bluetooth permission is not granted, please check in settings.</string>
+    <string name="permissionAlertMessage">Open app settings</string>
+    <string name="internetAlert">Internet connection is not available, please check in settings.</string>
+    <string name="internetAlertMessage">Open Wi-Fi settings</string>
+    <string name="bluetoothAlert">Bluetooth connection is not available, please check in settings.</string>
+    <string name="bluetoothAlertMessage">Open bluetooth settings</string>
+    <string name="reconnecting">Reconnecting</string>
+    <string name="goToShop">Go to shop</string>
+    <string name="locations">Locations</string>
+    <string name="fetchingLocation">Fetching locations</string>
+    <string name="noLocationSelected">No location selected</string>
+    <string name="readersListDescription">Make sure your reader is turned on by pressing the power button on the side.</string>
+    <string name="plus">+</string>
+    <string name="createLocation">Create Location</string>
+    <string name="displayName">Display name</string>
+    <string name="hq">HQ</string>
+    <string name="address">Address</string>
+    <string name="lineFirst">Line 1</string>
+    <string name="firstLineHint">510 Townsend St</string>
+    <string name="lineSecond">Line 2</string>
+    <string name="city">City</string>
+    <string name="cityHint">San Francisco</string>
+    <string name="state">State</string>
+    <string name="stateHint">CA</string>
+    <string name="countryHint">Country</string>
+    <string name="countrySampleText">United State (US)</string>
+    <string name="postalCode">Postal code</string>
+    <string name="postalCodeHint">94103</string>
+    <string name="pleaseEnterADisplayName">Please enter a display name</string>
+    <string name="pleaseEnterAAddressNLineFirst">Please enter an address line 1</string>
+    <string name="location_will_be_changed">Will change location from %1$s to %2$s</string>
+    <string name="noRegisteredLocation">This reader does not have a previously registered location. Please select a location to register it to.</string>
+    <string name="insertSwipeOrTapToPay">Insert, Swipe or Tap to Pay</string>
+    <string name="doNotRemoveCard">Do not remove card</string>
+    <string name="preparingPayment">Preparing payment…</string>
+    <string name="approved">Approved</string>
+    <string name="reconnectionSucceeded">Reconnection succeeded</string>
+    <string name="reconnectionFailed">Reconnection failed, please scan and select the reader you want to connect</string>
+    <string name="errorConnection">Internet connection is not available.\nPlease check it and try again.</string>
+    <string name="errorUnknown">Unknown error.</string>
+    <string name="confirmPhoneMessage">Please confirm your phone number to receive order updates</string>
+    <string name="continueButton">Continue</string>
+    <string name="editButton">Edit</string>
+    <string name="readerInfo">%1$s %2$s</string>
+    <string name="readerFirmwareInfo">Firmware version: %1$s\nConfig info: %2$s</string>
+
+    <plurals name="locationsFound">
+        <item quantity="one">%d location found</item>
+        <item quantity="other">%d locations found</item>
+    </plurals>
+
+    <string name="no_results_found">No results found</string>
+    <string name="no_results_found_for">No results found for \"%1$s\"</string>
+    <string name="store_search_hint">Search for your store to start</string>
+    <string name="tapToOrder">Tap to\nOrder</string>
+    <string name="skipTheWaitWith">Skip the wait with</string>
+    <string name="oneMarket">OneMarket</string>
+
+    <!-- Reader events -->
+
+    <string name="reader_message_try_another_card">Try another card</string>
+    <string name="reader_message_try_another_read_method">The card could not be read. Try again or use a different card</string>
+    <string name="reader_message_multiple_cards">Multiple contactless cards detected</string>
+    <string name="reader_message_remove_card">Remove card</string>
+    <string name="reader_message_swipe">Swipe card</string>
+    <string name="reader_message_insert_or_swipe">Insert or swipe card</string>
+    <string name="reader_message_insert">Insert card</string>
+    <string name="reader_message_retry">Retry card</string>
+    <string name="reader_message_check_mobile">Check your mobile device</string>
+
+    <!-- Reader events -->
+
+    <string name="payment_step_process">Processing payment…</string>
+    <string name="payment_step_capture">Finishing payment…</string>
+
+</resources>

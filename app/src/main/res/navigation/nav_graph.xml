@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/setupFragment">
+
+    <fragment
+        android:id="@+id/setupFragment"
+        android:name="app.onem.kioskandroid.feature.setup.SetupFragment"
+        android:label="SetupFragment"
+        tools:layout="@layout/fr_setup">
+        <action
+            android:id="@+id/action_setupFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="app.onem.kioskandroid.feature.webview.WebViewFragment"
+        android:label="WebViewFragment"
+        tools:layout="@layout/fr_web_view">
+        <action
+            android:id="@+id/action_webViewFragment_to_informationCollectionFragment"
+            app:destination="@id/informationCollectionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="app.onem.kioskandroid.feature.payment.PaymentFragment"
+        android:label="PaymentFragment"
+        tools:layout="@layout/fr_payment_no_progress">
+        <argument
+            android:name="price"
+            app:argType="integer" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/informationCollectionFragment"
+        android:name="app.onem.kioskandroid.feature.informationcollection.InformationCollectionFragment"
+        android:label="InformationCollectionFragment"
+        tools:layout="@layout/fr_information_collection">
+        <action
+            android:id="@+id/action_informationCollectionFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+        <argument
+            android:name="price"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

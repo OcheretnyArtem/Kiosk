@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:isScrollContainer="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/defaultHorizontalPageMargins"
+            android:layout_marginEnd="@dimen/defaultHorizontalPageMargins"
+
+            android:layout_marginTop="@dimen/defaultVerticalPageMargins"
+            android:layout_marginBottom="64dp"
+
+            android:layout_gravity="center_vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                app:layout_constraintWidth_max="424dp">
+
+                <TextView
+                    android:id="@+id/typePhoneMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/inputPhoneNumberMessage"
+                    android:textSize="@dimen/informationCollectionTextSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/phoneHintText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/primary_margin"
+                    android:text="@string/yourPhoneNumber"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/informationCollectionTextSize"
+                    android:textStyle="bold"
+                    android:paddingBottom="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/typePhoneMessage" />
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="5dp"
+                    android:gravity="right"
+                    android:text="+"
+
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/informationCollectionInputTextSize"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/phoneEditText"
+
+                    app:layout_constraintStart_toStartOf="@+id/phoneEditText" />
+
+                <EditText
+                    android:id="@+id/phoneEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:inputType="phone"
+                    android:longClickable="false"
+                    android:paddingStart="28dp"
+                    android:text="1"
+                    android:textSize="@dimen/informationCollectionInputTextSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/phoneHintText" />
+
+                <TextView
+                    android:id="@+id/phoneErrorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/phoneError"
+                    android:textColor="@color/error"
+                    android:textSize="@dimen/smallTitleSize"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/phoneEditText" />
+
+                <TextView
+                    android:id="@+id/nameHintText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/primary_margin"
+                    android:longClickable="false"
+                    android:text="@string/preferredNameRequired"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/informationCollectionTextSize"
+                    android:textStyle="bold"
+                    android:paddingBottom="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/phoneErrorText" />
+
+                <EditText
+                    android:id="@+id/nameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="@string/preferredName"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapSentences"
+                    android:singleLine="true"
+                    android:textSize="@dimen/informationCollectionInputTextSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/nameHintText" />
+
+                <TextView
+                    android:id="@+id/nameErrorText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nameError"
+                    android:textColor="@color/error"
+                    android:textSize="@dimen/smallTitleSize"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/nameEditText" />
+
+                <Button
+                    android:id="@+id/payButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/primary_margin"
+                    android:layout_marginBottom="32dp"
+                    android:background="@drawable/button_background"
+                    android:text="@string/continueToPayment"
+                    android:textSize="@dimen/informationCollectionTextSize"
+                    android:layout_alignParentBottom="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/nameErrorText" />
+
+                <ProgressBar
+                    android:id="@+id/progressIndicator"
+                    android:layout_width="@dimen/progressIndicatorSize"
+                    android:layout_height="@dimen/progressIndicatorSize"
+                    android:layout_alignParentBottom="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/doubleMargin"
+        android:paddingVertical="@dimen/doubleMargin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

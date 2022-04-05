@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/terminalDialogHorizontalMargin"
+        android:layout_marginTop="@dimen/terminalDialogVerticalMargin"
+        android:layout_marginEnd="@dimen/terminalDialogHorizontalMargin"
+        android:layout_marginBottom="@dimen/terminalDialogVerticalMargin">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_grey"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/titleScreenMargin"
+                    android:layout_marginTop="@dimen/titleScreenMargin"
+                    android:text="@string/cancel"
+                    android:textColor="@color/blue"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/titleScreenMargin"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/createLocation"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/mainTitleSize"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvEmptyFieldError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/titleScreenMargin"
+                    android:paddingEnd="@dimen/titleScreenMargin"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/chooserSize"
+                    android:visibility="gone"
+                    tools:text="@string/pleaseEnterADisplayName"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvDisplayNameTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/titleScreenMargin"
+                    android:layout_marginTop="@dimen/titleScreenMargin"
+                    android:text="@string/displayName"
+                    android:textAllCaps="true"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/smallTitleSize" />
+
+                <EditText
+                    android:id="@+id/etDisplayName"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white"
+                    android:hint="@string/hq"
+                    android:longClickable="false"
+                    android:paddingStart="@dimen/titleScreenMargin"
+                    android:paddingEnd="@dimen/titleScreenMargin"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/text_grey"
+                    android:textSize="@dimen/informationCollectionInputTextSize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/titleScreenMargin"
+                    android:layout_marginTop="@dimen/titleScreenMargin"
+                    android:text="@string/address"
+                    android:textAllCaps="true"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/smallTitleSize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/titleScreenMargin"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/lineFirst"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/smallTitleSize" />
+
+                <EditText
+                    android:id="@+id/etLineFirst"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white"
+                    android:hint="@string/firstLineHint"
+                    android:longClickable="false"
+                    android:paddingStart="@dimen/titleScreenMargin"
+                    android:paddingEnd="@dimen/titleScreenMargin"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/text_grey"
+                    android:textSize="@dimen/informationCollectionInputTextSize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/titleScreenMargin"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/lineSecond"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/smallTitleSize" />
+
+                <EditText
+                    android:id="@+id/etLineSecond"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white"
+                    android:paddingStart="@dimen/titleScreenMargin"
+                    android:paddingEnd="@dimen/titleScreenMargin"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/text_grey"
+                    android:textSize="@dimen/informationCollectionInputTextSize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/titleScreenMargin"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/city"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/smallTitleSize" />
+
+                <EditText
+                    android:id="@+id/etCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white"
+                    android:hint="@string/cityHint"
+                    android:paddingStart="@dimen/titleScreenMargin"
+                    android:paddingEnd="@dimen/titleScreenMargin"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/text_grey"
+                    android:textSize="@dimen/informationCollectionInputTextSize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/titleScreenMargin"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/state"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/smallTitleSize" />
+
+                <EditText
+                    android:id="@+id/etState"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white"
+                    android:hint="@string/stateHint"
+                    android:paddingStart="@dimen/titleScreenMargin"
+                    android:paddingEnd="@dimen/titleScreenMargin"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/text_grey"
+                    android:textSize="@dimen/informationCollectionInputTextSize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/titleScreenMargin"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/countryHint"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/smallTitleSize" />
+
+                <TextView
+                    android:id="@+id/tvCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/titleScreenMargin"
+                    android:paddingEnd="@dimen/titleScreenMargin"
+                    android:text="@string/countrySampleText"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/informationCollectionInputTextSize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/titleScreenMargin"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/postalCode"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/smallTitleSize" />
+
+                <EditText
+                    android:id="@+id/etPostalCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white"
+                    android:hint="@string/postalCodeHint"
+                    android:longClickable="false"
+                    android:paddingStart="@dimen/titleScreenMargin"
+                    android:paddingEnd="@dimen/titleScreenMargin"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/text_grey"
+                    android:textSize="@dimen/informationCollectionInputTextSize" />
+
+                <TextView
+                    android:id="@+id/tvCreate"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/titleScreenMargin"
+                    android:layout_marginBottom="@dimen/titleScreenMargin"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/titleScreenMargin"
+                    android:paddingEnd="@dimen/titleScreenMargin"
+                    android:text="@string/createLocation"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/informationCollectionInputTextSize" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

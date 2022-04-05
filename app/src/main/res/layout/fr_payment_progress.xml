@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/priceGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <TextView
+        android:id="@+id/amountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textPaymentPrice"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/priceGuide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/priceGuide"
+        tools:text="$ 7.97" />
+
+    <ProgressBar
+        android:id="@+id/progressFilled"
+        android:layout_width="@dimen/progressIndicatorSize"
+        android:layout_height="@dimen/progressIndicatorSize"
+        android:indeterminate="false"
+        android:indeterminateOnly="false"
+        android:progress="100"
+        android:progressDrawable="@drawable/progress"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/progressAnimation"
+        app:layout_constraintEnd_toEndOf="@id/progressAnimation"
+        app:layout_constraintStart_toStartOf="@id/progressAnimation"
+        app:layout_constraintTop_toTopOf="@id/progressAnimation" />
+
+
+    <ProgressBar
+        android:id="@+id/progressAnimation"
+        android:layout_width="@dimen/progressIndicatorSize"
+        android:layout_height="@dimen/progressIndicatorSize"
+        android:progressDrawable="@drawable/progress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/loadingImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/doubleMargin"
+        android:alpha="0"
+        android:src="@drawable/ic_success"
+        app:layout_constraintBottom_toBottomOf="@id/progressAnimation"
+        app:layout_constraintEnd_toEndOf="@id/progressAnimation"
+        app:layout_constraintStart_toStartOf="@id/progressAnimation"
+        app:layout_constraintTop_toTopOf="@id/progressAnimation"
+        app:tint="@color/primary" />
+
+    <TextView
+        android:id="@+id/primaryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textPaymentPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressAnimation"
+        android:paddingStart="@dimen/defaultHorizontalPageMargins"
+        android:paddingEnd="@dimen/defaultHorizontalPageMargins"
+        android:gravity="center"
+        tools:text="First line"/>
+
+    <TextView
+        android:id="@+id/secondaryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textPaymentSecondary"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/primaryTextView"
+        android:paddingStart="@dimen/defaultHorizontalPageMargins"
+        android:paddingEnd="@dimen/defaultHorizontalPageMargins"
+        android:gravity="center"
+        tools:text="Second line" />
+
+    <ImageView
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/doubleMargin"
+        android:paddingVertical="@dimen/doubleMargin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

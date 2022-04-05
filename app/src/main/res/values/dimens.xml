@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="progressIndicatorSize">160dp</dimen>
+    <dimen name="titleScreenMargin">32dp</dimen>
+    <dimen name="titleScreenLogoSize">140dp</dimen>
+    <dimen name="divider_width">1dp</dimen>
+    <dimen name="primary_margin">15dp</dimen>
+    <dimen name="doubleMargin">30dp</dimen>
+    <dimen name="zeroMargin">0dp</dimen>
+    <dimen name="screensaverLandscapeMargin">80dp</dimen>
+    <dimen name="smallTitleSize">16sp</dimen>
+    <dimen name="mainTitleSize">36sp</dimen>
+    <dimen name="chooserSize">22sp</dimen>
+    <dimen name="priceLabelSize">32sp</dimen>
+
+    <dimen name="informationCollectionTextSize">18sp</dimen>
+    <dimen name="informationCollectionInputTextSize">22sp</dimen>
+    <dimen name="informationCollectionButtonSize">24sp</dimen>
+    <dimen name="textPaymentPrice">42sp</dimen>
+    <dimen name="textPaymentPrimary">24sp</dimen>
+    <dimen name="textPaymentSecondary">20sp</dimen>
+
+    <dimen name="defaultHorizontalPageMargins">32dp</dimen>
+    <dimen name="defaultVerticalPageMargins">16dp</dimen>
+
+    <!--  Values for phones landscape and portrait  -->
+    <dimen name="terminalDialogHorizontalMargin">15dp</dimen>
+    <dimen name="terminalDialogVerticalMargin">7dp</dimen>
+
+</resources>

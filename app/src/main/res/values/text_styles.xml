@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    FONTS    -->
+    <style name="ManropeBold">
+        <item name="android:fontFamily">@font/manrope_bold</item>
+    </style>
+
+    <style name="DexaProExtraBold">
+        <item name="android:fontFamily">@font/dexapro_extrabold</item>
+    </style>
+
+    <!--    COLORS    -->
+    <style name="ManropeBold.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="DexaProExtraBold.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!--    SIZES    -->
+    <style name="DexaProExtraBold.White.ScreensaverTitle">
+        <item name="android:textSize">108sp</item>
+    </style>
+
+    <style name="ManropeBold.White.ScreensaverSubtitle">
+        <item name="android:textSize">60sp</item>
+    </style>
+
+</resources>

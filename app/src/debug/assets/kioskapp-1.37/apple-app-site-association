@@ -1,0 +1,15 @@
+{
+  "applinks": {
+      "details": [
+           {
+             "appIDs": [ "QTLMK9CN3H.com.1m.marketplace" ],
+             "components": [
+               {
+                  "/": "*",
+                  "comment": "Matches any URL"
+               }
+             ]
+           }
+       ]
+   }
+}

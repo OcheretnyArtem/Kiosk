@@ -1,8 +1,6 @@
 package app.onem.kioskandroid.feature.webview
 
-import android.content.Context
 import android.view.View
-import androidx.lifecycle.viewModelScope
 import app.onem.domain.entities.doubleToPrice
 import app.onem.domain.repositories.KioskRepository
 import app.onem.domain.utils.Shop
@@ -13,15 +11,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.io.File
 
 class WebViewViewModel(
-    private val kioskRepository: KioskRepository
+    private val kioskRepository: KioskRepository,
+    private val server: WebServer
 ) : BaseViewModel<WebViewViewState, WebViewAction>() {
 
     override fun initialViewState() = WebViewViewState()
     private var shop: Shop? = null
-    private var server: WebServer? = null
     private var singleClickJob: Job? = null
     internal var fragment: View? = null
 
@@ -30,17 +27,15 @@ class WebViewViewModel(
         sendAction(WebViewAction.ShopReceived)
     }
 
-    internal fun runServer(webAppDirPath: String) {
-//        server = WebServer("localhost", 3000, File(webAppDirPath).canonicalFile)
-        server = WebServer("localhost", 3000, File(webAppDirPath).canonicalFile)
+    internal fun runServer() {
         launch {
-            server?.start()
+            server.start()
         }
         sendAction(WebViewAction.LoadShop(shop?.code))
     }
 
     internal fun stopServer() {
-        server?.stop()
+        server.stop()
     }
 
     internal fun paymentResultReceived(paymentData: PaymentData) {

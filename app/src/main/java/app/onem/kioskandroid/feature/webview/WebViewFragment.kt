@@ -1,11 +1,16 @@
 package app.onem.kioskandroid.feature.webview
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.JavascriptInterface
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.lifecycleScope
@@ -17,10 +22,10 @@ import app.onem.kioskandroid.databinding.FrWebViewBinding
 import app.onem.kioskandroid.feature.informationcollection.INFORMATION_COLLECTION_REQUEST
 import app.onem.kioskandroid.feature.informationcollection.INFORMATION_COLLECTION_REQUEST_DATA
 import app.onem.kioskandroid.feature.payment.PaymentData
-import app.onem.kioskandroid.utils.webAppDirPath
 import by.kirich1409.viewbindingdelegate.viewBinding
 import kotlinx.coroutines.flow.collect
 import org.koin.android.viewmodel.ext.android.viewModel
+
 
 class WebViewFragment : BaseFragment(R.layout.fr_web_view), OrderCancelable {
 
@@ -31,14 +36,19 @@ class WebViewFragment : BaseFragment(R.layout.fr_web_view), OrderCancelable {
         super.onCreate(savedInstanceState)
 
         setFragmentResultListener(INFORMATION_COLLECTION_REQUEST) { _, bundle ->
-            val paymentResult = bundle.getParcelable<PaymentData>(INFORMATION_COLLECTION_REQUEST_DATA)
+            val paymentResult =
+                bundle.getParcelable<PaymentData>(INFORMATION_COLLECTION_REQUEST_DATA)
             paymentResult?.let {
                 viewModel.paymentResultReceived(paymentResult)
             }
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View? {
         return if (viewModel.fragment == null) {
             super.onCreateView(inflater, container, savedInstanceState)
         } else {
@@ -85,7 +95,7 @@ class WebViewFragment : BaseFragment(R.layout.fr_web_view), OrderCancelable {
 
     private fun runAction(action: WebViewAction) {
         when (action) {
-            WebViewAction.ShopReceived -> viewModel.runServer(requireContext().webAppDirPath)
+            WebViewAction.ShopReceived -> viewModel.runServer()
             is WebViewAction.LoadShop -> {
                 action.shopId?.let {
                     openPage(it)

@@ -19,20 +19,25 @@ import app.onem.kioskandroid.monitor.NetworkMonitor
 import app.onem.kioskandroid.monitor.NetworkMonitorImpl
 import app.onem.kioskandroid.monitor.TerminalMonitor
 import app.onem.kioskandroid.monitor.TerminalMonitorImpl
+import app.onem.kioskandroid.server.WebServer
+import kotlinx.coroutines.Dispatchers
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
+import kotlin.coroutines.CoroutineContext
 
 val koinModule = module {
     viewModel { SetupViewModel(get(), get(), get(), get(), get(), get(), get(), get(), get()) }
     viewModel { ChooseShopViewModel(get()) }
     viewModel { TerminalDialogViewModel(get(), get()) }
-    viewModel { WebViewViewModel(get()) }
-    viewModel { (
-                    price: Price,
-                    name: String,
-                    phone: String
-                ) ->
+    viewModel { WebViewViewModel(get(), get()) }
+    viewModel {
+            (
+                price: Price,
+                name: String,
+                phone: String,
+            ),
+        ->
         PaymentViewModel(price, name, phone, get(), get(), get(), get())
     }
     viewModel { (price: Price) -> InformationCollectionViewModel(price, get(), get()) }
@@ -44,4 +49,6 @@ val koinModule = module {
     single<NetworkMonitor> { NetworkMonitorImpl(androidContext()) }
     single<BluetoothMonitor> { BluetoothMonitorImpl(androidContext()) }
     single<TerminalMonitor> { TerminalMonitorImpl() }
+    single<CoroutineContext> { Dispatchers.IO }
+    single<WebServer> { WebServer(get(), get()) }
 }

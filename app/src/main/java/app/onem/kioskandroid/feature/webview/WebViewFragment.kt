@@ -1,16 +1,11 @@
 package app.onem.kioskandroid.feature.webview
 
 import android.annotation.SuppressLint
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.JavascriptInterface
-import android.webkit.WebResourceRequest
-import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.lifecycleScope
@@ -155,7 +150,7 @@ class WebViewFragment : BaseFragment(R.layout.fr_web_view), OrderCancelable {
     }
 
     private fun openPage(url: String) {
-        binding.webview.loadUrl("http://localhost:3000/#/$url")
+        binding.webview.loadUrl("http://localhost:3000/index.html")
     }
 
     internal fun callPaymentClicked(price: Double) {

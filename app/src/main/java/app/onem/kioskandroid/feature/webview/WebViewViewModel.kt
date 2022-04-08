@@ -7,14 +7,14 @@ import app.onem.domain.utils.Shop
 import app.onem.kioskandroid.base.BaseViewModel
 import app.onem.kioskandroid.feature.payment.PaymentData
 import app.onem.kioskandroid.server.WebServer
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.Dispatchers
 
 class WebViewViewModel(
     private val kioskRepository: KioskRepository,
-    private val server: WebServer
+    private val server: WebServer,
 ) : BaseViewModel<WebViewViewState, WebViewAction>() {
 
     override fun initialViewState() = WebViewViewState()
@@ -30,8 +30,8 @@ class WebViewViewModel(
     internal fun runServer() {
         launch {
             server.start()
+            sendAction(WebViewAction.LoadShop(shop?.code))
         }
-        sendAction(WebViewAction.LoadShop(shop?.code))
     }
 
     internal fun stopServer() {

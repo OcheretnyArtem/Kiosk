@@ -150,7 +150,7 @@ class WebViewFragment : BaseFragment(R.layout.fr_web_view), OrderCancelable {
     }
 
     private fun openPage(url: String) {
-        binding.webview.loadUrl("http://localhost:3000/index.html")
+        binding.webview.loadUrl("http://localhost:3000/#/$url")
     }
 
     internal fun callPaymentClicked(price: Double) {

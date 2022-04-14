@@ -6,8 +6,7 @@ import io.ktor.application.install
 import io.ktor.features.ContentNegotiation
 import io.ktor.features.CallLogging
 import io.ktor.gson.gson
-import io.ktor.http.content.static
-import io.ktor.http.content.files
+import io.ktor.http.content.*
 import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
@@ -24,6 +23,7 @@ private const val PORT = 3000
 class WebServer(val context: Context, val coroutineContext: CoroutineContext) {
 
     private val appName = WebAppTools.webAppName
+    private val rootFileFolder = context.filesDir
 
     init {
         File(context.filesDir.path, appName).mkdir()
@@ -40,7 +40,8 @@ class WebServer(val context: Context, val coroutineContext: CoroutineContext) {
         install(CallLogging)
         routing {
             static("/") {
-                files(context.filesDir)
+                files(rootFileFolder)
+                default("${rootFileFolder}/index.html")
             }
         }
     }
@@ -57,7 +58,7 @@ class WebServer(val context: Context, val coroutineContext: CoroutineContext) {
 
     private fun copyFile(context: Context, filePath: String) {
         val file = context.assets.open(filePath)
-        val outFile = File(context.filesDir, filePath.removePrefix(appName))
+        val outFile = File(rootFileFolder, filePath.removePrefix(appName))
 
         val outStream = FileOutputStream(outFile)
 
@@ -75,7 +76,7 @@ class WebServer(val context: Context, val coroutineContext: CoroutineContext) {
                 copyFile(context, listPath)
             } else {
 
-                File(context.filesDir.path, listPath.removePrefix(appName)).mkdir()
+                File(rootFileFolder.path, listPath.removePrefix(appName)).mkdir()
                 copyWebResources(context, listPath)
             }
         }

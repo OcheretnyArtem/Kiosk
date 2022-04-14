@@ -21,7 +21,6 @@ buildscript {
     ext.espresso_version = "3.3.0"
     ext.timber_version = "5.0.1"
     ext.stripe_version = "2.5.2"
-    ext.nanohttpd_version = "2.3.1"
     ext.flowbinding_version = "1.2.0"
 
     ext.ktor_version = "1.6.8"

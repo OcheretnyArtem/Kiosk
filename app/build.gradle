@@ -92,10 +92,6 @@ dependencies {
     //FlowBinding
     implementation "io.github.reactivecircus.flowbinding:flowbinding-appcompat:$flowbinding_version"
 
-    //nanohttpd web server
-    implementation "org.nanohttpd:nanohttpd:$nanohttpd_version"
-    implementation "org.nanohttpd:nanohttpd-webserver:$nanohttpd_version"
-
     //Ktor
     implementation "io.ktor:ktor-server-netty:$ktor_version"
     implementation "io.ktor:ktor-gson:$ktor_version"
